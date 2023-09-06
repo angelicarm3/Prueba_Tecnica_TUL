@@ -13,6 +13,9 @@ import java.util.Scanner;
 public class Ejercicio_1 {
 
     public static void main(String[] args) {
+        /*
+        * Recieves input from console and calls highestValuePalindrome.
+        */
         Scanner scan = new Scanner(System.in);
         
         System.out.println("Ingrese el número.");
@@ -27,6 +30,12 @@ public class Ejercicio_1 {
     }
 
     public static String highestValuePalindrome(String s, int n, int k) {
+        /*
+        * Recieves an array of integers (digits of a number), the array's length and the amount of changes allowed.
+        * return: String (a string representation of the number) if the number is a palindrome
+        * or -1 if it was imposible to trun the number into a palindrome within the amount of changes allowed. 
+        */
+        
         System.out.println("Frase inicial: " + s);
         
         boolean isPalindrome = false;        
@@ -34,9 +43,7 @@ public class Ejercicio_1 {
         
         num = modifyArray(num, n, k);               
         isPalindrome = validatePalindrome(num, n);
-        
-        String s2 = toString(num, n);
-           
+                   
         if (isPalindrome) {
             return toString(num, n);
         } else {
@@ -45,6 +52,10 @@ public class Ejercicio_1 {
     }
     
     public static int[] toIntArray(String s, int n) {
+        /*
+        * Recieves a string representation of a number and the string's length.
+        * return: int[] (an array of integers where each position stores a digit of the number). 
+        */
         int[] num = new int[n];
         
         for (int i = 0; i < n; i++) {
@@ -55,6 +66,12 @@ public class Ejercicio_1 {
     }
     
     public static int[] modifyArray(int[] num, int n, int k) {
+        /*
+        * Recieves an array of integers (digits of a number), the array's length and the amount of changes allowed.
+        * It compares the array from start to end and viceversa to modify it in order to get the highest palindrome posible
+        * without exceeding the amount of changes allowed.
+        * return: int[] (the array of integers modified). 
+        */
         int j = n - 1;
         int flag = 0;
         
@@ -93,7 +110,11 @@ public class Ejercicio_1 {
         return num;
     }
     
-    public static boolean validatePalindrome(int[] num, int n) {            
+    public static boolean validatePalindrome(int[] num, int n) {
+        /*
+        * Recieves an array of integers (digits of a number) and the array's length.
+        * return: boolean (true if the number is a palindrome, flase if it's not). 
+         */
         boolean isPalindrome = false;
         int flag = 0;
         int j = n - 1;
@@ -117,6 +138,10 @@ public class Ejercicio_1 {
     }
     
     public static String toString (int[] num, int n) {
+        /*
+        * Recieves an array of integers (digits of a number) and the array's length.
+        * return: String (a string representation of the number). 
+         */
         String s2 = "";
 
         for (int i = 0; i < n; i++) {
